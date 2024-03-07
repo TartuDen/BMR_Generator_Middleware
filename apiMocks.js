@@ -1,4 +1,15 @@
 // apiMocks.js
+// Define the delay function
+/**
+ * Delays execution for a specified duration.
+ * @param {number} duration - The duration to delay in milliseconds.
+ * @returns {Promise<void>} A promise that resolves after the specified duration.
+ */
+function delay(duration) {
+  return new Promise(resolve => {
+    setTimeout(resolve, duration);
+  });
+}
 
 /**
  * Mock function to simulate fetching an authorization token.
@@ -49,7 +60,7 @@ async function GetParametersForOperationsMOCK() {
  *
  * @returns {Promise<Array>} A promise that resolves with the simulated list of equipment types.
  */
-export async function GetListEquipmentTypesMOCK() {
+async function GetListEquipmentTypesMOCK() {
   await delay(500); // Simulating a delay of 500ms
 
   // Simulated list of equipment types
@@ -71,7 +82,7 @@ export async function GetListEquipmentTypesMOCK() {
  *
  * @returns {Promise<Array>} A promise that resolves with the simulated list of activities.
  */
-async function GetListReactorActivityMOCK(equipmentType) {
+async function GetListActivityMOCK(equipmentType) {
   await delay(500); // Simulating a delay of 500ms
 
   // Simulated list of equipment types
@@ -316,3 +327,14 @@ async function GetEquipmentListMOCK() {
 
   return equipmentList;
 }
+
+
+// Export all functions together
+export {
+  GetAuthTokenMOCK,
+  GetParametersForOperationsMOCK,
+  GetListEquipmentTypesMOCK,
+  GetListActivityMOCK,
+  GetEquipmentListByTypeMOCK,
+  GetEquipmentListMOCK
+};

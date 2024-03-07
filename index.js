@@ -2,7 +2,7 @@ import express from 'express';
 import axios from 'axios';
 import cors from 'cors';
 import bodyParser from 'body-parser';
-import { GetAuthToken } from './dbImitation.js'; // Import GetAuthToken function
+import { GetListEquipmentTypesMOCK, GetListActivityMOCK } from './apiMocks.js';
 
 
 
@@ -22,28 +22,6 @@ function delay(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
 
-/**
- * Simulates retrieving a list of equipment types with a delay.
- *
- * @returns {Promise<Array>} A promise that resolves with the simulated list of equipment types.
- */
-export async function GetListEquipmentTypesMOCK() {
-    await delay(500); // Simulating a delay of 500ms
-  
-    // Simulated list of equipment types
-    const equipmentTypes = [
-      { name: "reactor" },
-      { name: "oven" },
-      { name: "balances" },
-      { name: "druck_filter" },
-      { name: "nutsche_filter" },
-      { name: "membrane_pump" },
-      { name: "peristaltic_pump" },
-    ];
-  
-    return equipmentTypes;
-  }
-
 
 // Endpoint to handle authentication and return token
 app.post('/login', async (req, res) => {
@@ -52,7 +30,7 @@ app.post('/login', async (req, res) => {
     try {
         // Call the GetAuthToken function to fetch the authorization token
         const token = await GetAuthToken(username, password);
-        console.log("token:");
+        console.log("token:");8
         console.log(token);
         
         // Return the token as JSON
@@ -65,9 +43,19 @@ app.post('/login', async (req, res) => {
 
 
 app.get("/equipment_list", async (req,res)=>{
+  let equipmentType = req.body
+  
     let equipmentTypes = await GetListEquipmentTypesMOCK();
     equipmentTypes = JSON.stringify(equipmentTypes);
     res.status(200).json(equipmentTypes);
+})
+
+app.post("/filter", async (req,res)=>{
+  let eqType = req.query.equipmentType
+  
+  let equipmentTypes = await GetListActivityMOCK(eqType);
+  equipmentTypes = JSON.stringify(equipmentTypes);
+  res.status(200).json(equipmentTypes);
 })
 
 app.listen(port,(err)=>{

@@ -2,7 +2,7 @@ import express from 'express';
 import axios from 'axios';
 import cors from 'cors';
 import bodyParser from 'body-parser';
-import { GetListEquipmentTypesMOCK, GetListActivityMOCK } from './apiMocks.js';
+import { GetListEquipmentTypesMOCK, GetListActivityMOCK, GetEquipmentListByTypeMOCK } from './apiMocks.js';
 
 
 
@@ -48,6 +48,13 @@ app.get("/equipment_list", async (req,res)=>{
     let equipmentTypes = await GetListEquipmentTypesMOCK();
     equipmentTypes = JSON.stringify(equipmentTypes);
     res.status(200).json(equipmentTypes);
+})
+
+app.get("/main_table/:eq", async (req,res)=>{
+  let eq = req.params.eq;
+  let eqCodes = await GetEquipmentListByTypeMOCK(eq);
+  eqCodes = JSON.stringify(eqCodes);
+  res.status(200).json(eqCodes);
 })
 
 app.post("/filter", async (req,res)=>{

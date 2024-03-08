@@ -243,20 +243,51 @@ async function GetEquipmentListByTypeMOCK(equipmentType) {
   // Simulated list of equipment for different types
   const equipmentMap = {
     balances: [
+      { name: "balances", code: "007-1" },
       { name: "balances", code: "007-10" },
-      { name: "balances", code: "007-11" },
       { name: "balances", code: "007-12" },
+      { name: "balances", code: "007-16" },
+      { name: "balances", code: "007-21" },
+      { name: "balances", code: "007-25" },
+      { name: "balances", code: "007-26" },
+      { name: "balances", code: "007-27" },
+      { name: "balances", code: "007-34" },
+      { name: "balances", code: "007-6" },
+      { name: "balances", code: "007-20" },
+      { name: "balances", code: "007-23" },
+      { name: "balances", code: "007-24" },
+      { name: "balances", code: "007-39" },
+      { name: "balances", code: "007-40" },
+      { name: "balances", code: "007-41" },
+      { name: "balances", code: "007-42" },
+      { name: "balances", code: "007-43" },
+      { name: "balances", code: "007-44" },
+      { name: "balances", code: "007-45" },
     ],
-    pump: [
-      { name: "pump", code: "001-10" },
-      { name: "pump", code: "001-11" },
-      { name: "pump", code: "001-12" },
+    m_pump: [
+      { name: "pump", code: "001-22" },
+      { name: "pump", code: "001-23" },
+      { name: "pump", code: "001-24" },
+      { name: "pump", code: "001-30" },
+    ],
+    p_pump: [
+      { name: "pump", code: "001-13" },
+      { name: "pump", code: "001-29" },
+      { name: "pump", code: "001-40" },
+    ],
+    o_pump: [
+      { name: "pump", code: "001-38" },
+      { name: "pump", code: "001-43" },
     ],
     reactor: [
       { name: "reactor", code: "002-10" },
       { name: "reactor", code: "002-11" },
       { name: "reactor", code: "002-12" },
       { name: "reactor", code: "002-13" },
+      { name: "reactor", code: "002-14" },
+      { name: "reactor", code: "002-15" },
+      { name: "reactor", code: "002-16" },
+      { name: "reactor", code: "002-17" },
     ],
     jug: [
       { name: "jug", code: "tile" },
@@ -269,8 +300,14 @@ async function GetEquipmentListByTypeMOCK(equipmentType) {
     ],
     druck_filter: [
       { name: "druck_filter", code: "046-6" },
+      { name: "druck_filter", code: "046-7" },
     ],
     nutsche_filter: [
+      { name: "nutsche_filter", code: "046-1" },
+      { name: "nutsche_filter", code: "046-10" },
+      { name: "nutsche_filter", code: "046-11" },
+      { name: "nutsche_filter", code: "046-12" },
+      { name: "nutsche_filter", code: "046-4" },
       { name: "nutsche_filter", code: "046-5" },
     ],
     membrane_pump: [
@@ -282,6 +319,15 @@ async function GetEquipmentListByTypeMOCK(equipmentType) {
       { name: "peristaltic_pump", code: "001-13" },
       { name: "peristaltic_pump", code: "001-21" },
       { name: "peristaltic_pump", code: "001-29" },
+    ],
+    oven: [
+      { name: "oven", code: "012-10" },
+      { name: "oven", code: "012-13" },
+      { name: "oven", code: "012-14" },
+      { name: "oven", code: "012-15" },
+      { name: "oven", code: "012-16" },
+      { name: "oven", code: "012-17" },
+      { name: "oven", code: "012-20" },
     ],
     // Add more equipment types as needed
   };

@@ -1,14 +1,9 @@
+// index.js
 import express from 'express';
 import axios from 'axios';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import { GetListEquipmentTypesMOCK, GetListActivityMOCK, GetEquipmentListByTypeMOCK } from './apiMocks.js';
-
-
-
-
-
-
 
 const port = 8081;
 const app = express();
@@ -26,7 +21,6 @@ function delay(ms) {
 // Endpoint to handle authentication and return token
 app.post('/login', async (req, res) => {
     const { username, password } = req.body;
-
     try {
         // Call the GetAuthToken function to fetch the authorization token
         const token = await GetAuthToken(username, password);
@@ -43,8 +37,7 @@ app.post('/login', async (req, res) => {
 
 
 app.get("/equipment_list", async (req,res)=>{
-  let equipmentType = req.body
-  
+  // let equipmentType = req.body
     let equipmentTypes = await GetListEquipmentTypesMOCK();
     equipmentTypes = JSON.stringify(equipmentTypes);
     res.status(200).json(equipmentTypes);
@@ -59,7 +52,6 @@ app.get("/main_table/:eq", async (req,res)=>{
 
 app.post("/filter", async (req,res)=>{
   let eqType = req.query.equipmentType
-  
   let equipmentTypes = await GetListActivityMOCK(eqType);
   equipmentTypes = JSON.stringify(equipmentTypes);
   res.status(200).json(equipmentTypes);

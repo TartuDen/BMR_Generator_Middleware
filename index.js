@@ -24,9 +24,8 @@ app.post('/login', async (req, res) => {
     try {
         // Call the GetAuthToken function to fetch the authorization token
         const token = await GetAuthToken(username, password);
-        console.log("token:");8
+        console.log("token:");
         console.log(token);
-        
         // Return the token as JSON
         res.json({ token });
     } catch (error) {

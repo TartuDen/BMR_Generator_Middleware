@@ -68,10 +68,10 @@ async function GetListEquipmentTypesMOCK() {
     { name: "reactor" },
     { name: "oven" },
     { name: "balances" },
-    { name: "druck_filter" },
-    { name: "nutsche_filter" },
-    { name: "membrane_pump" },
-    { name: "peristaltic_pump" },
+    { name: "d_filter" },
+    { name: "n_filter" },
+    { name: "m_pump" },
+    { name: "p_pump" },
   ];
 
   return equipmentTypes;
@@ -97,13 +97,13 @@ async function GetListActivityMOCK(equipmentType) {
       Equipment: "reactor",
       OperationType: "loading_of_liquid",
       Content:
-        "Required amount of {material} is weighed on the balances {balances} using jug {jug}. Using peristaltic pump  {peristaltic_pump} and norprene hose {norprene hose}, weighted material is pumped into reactor via liquid loading valve. Peristaltic pump is set to {ppumpSet}%. After loading is done, pump is stopped, hose is removed. The 60 mm flange port is closed. Hose is cleaned.",
+        "Required amount of {material} is weighed on the balances {balances} using jug {jug}. Using peristaltic pump  {p_pump} and norprene hose {hose}, weighted material is pumped into reactor via liquid loading valve. Peristaltic pump is set to {ppumpSet}%. After loading is done, pump is stopped, hose is removed. The 60 mm flange port is closed. Hose is cleaned.",
     },
     {
       Equipment: "reactor",
       OperationType: "dosing_of_liquid",
       Content:
-        "Required amount of {material} is weighed on the balances {balances} using jug {jug}. Using peristaltic pump  {peristaltic_pump} and norprene hose {norprene hose}, weighted material is pumped into dosing system. Peristaltic pump is set to {ppumpSet}%. After loading is done, pump is stopped, hose is removed. Dosing system is closed. Hose is cleaned.",
+        "Required amount of {material} is weighed on the balances {balances} using jug {jug}. Using peristaltic pump  {p_pump} and norprene hose {hose}, weighted material is pumped into dosing system. Peristaltic pump is set to {ppumpSet}%. After loading is done, pump is stopped, hose is removed. Dosing system is closed. Hose is cleaned.",
     },
     {
       Equipment: "reactor",
@@ -128,97 +128,97 @@ async function GetListActivityMOCK(equipmentType) {
         "Heating for reactor {reactor} is turned ON. Temperature is set to {temp}°C.",
     },
     {
-      Equipment: "druck_filter",
+      Equipment: "d_filter",
       OperationType: "preparation of filter",
       Content:
-        "The filter {druck_filter} is assembled and prepared to work. Filtration cloth {filtration cloth} is prepared and properly installed. Argon and product lines are connected to the lid, pressure test is done.",
+        "The filter {d_filter} is assembled and prepared to work. Filtration cloth is prepared and properly installed. Argon and product lines are connected to the lid, pressure test is done.",
     },
     {
-      Equipment: "druck_filter",
+      Equipment: "d_filter",
       OperationType: "loading on filter",
       Content:
-        "Product is loaded on the filter {druck_filter} via product line. Argon line is closed during loading. Once 2/3 of the filter is loaded, stop pumping and close product line.",
+        "Product is loaded on the filter {d_filter} via product line. Argon line is closed during loading. Once 2/3 of the filter is loaded, stop pumping and close product line.",
     },
     {
-      Equipment: "druck_filter",
+      Equipment: "d_filter",
       OperationType: "filtration with argon pressure",
       Content:
-        "Check that product line is closed, check the pressure on Argon cylinder {Argon cylinder}, it must be in range 1-2bar. Open argon line on the lid of the filter {druck_filter} and wait until no more or very little of ML is coming into the receiver (visually on level tube). At the end of operation close the argon line.",
+        "Check that product line is closed, check the pressure on Argon cylinder {Argon cylinder}, it must be in range 1-2bar. Open argon line on the lid of the filter {d_filter} and wait until no more or very little of ML is coming into the receiver (visually on level tube). At the end of operation close the argon line.",
     },
     {
-      Equipment: "druck_filter",
+      Equipment: "d_filter",
       OperationType: "discharging ML",
       Content:
-        "Check that product line and argon line are closed. Release top valve on the receiver to make sure there is no extra pressure. Connect peristaltic pump {peristaltic_pump} to the bottom valve of the filter {druck_filter} using norprene hose {norprene hose}. Second end of the hose is securely fixed into receiving container canister, set the speed of peristaltic pump {peristaltic_pump} %. Start the pump. Continue the process until all ML is unloaded into respective receiver.",
+        "Check that product line and argon line are closed. Release top valve on the receiver to make sure there is no extra pressure. Connect peristaltic pump {p_pump} to the bottom valve of the filter {d_filter} using norprene hose {hose}. Second end of the hose is securely fixed into receiving container canister, set the speed of peristaltic pump {p_pump} %. Start the pump. Continue the process until all ML is unloaded into respective receiver.",
     },
     {
-      Equipment: "druck_filter",
+      Equipment: "d_filter",
       OperationType: "washing FK",
       Content:
-        "The lid of filter {druck_filter} is opened. Required amount of material is weighed on the balances {balances} using jug. Solvent is loaded on top of filter caje, using shovel {shovel} the filter cake is thoroughly mixed. The lid is closed.",
+        "The lid of filter {d_filter} is opened. Required amount of material is weighed on the balances {balances} using jug. Solvent is loaded on top of filter caje, using shovel {shovel} the filter cake is thoroughly mixed. The lid is closed.",
     },
     {
-      Equipment: "druck_filter",
+      Equipment: "d_filter",
       OperationType: "drying on filter",
       Content:
-        "The filter cake is additionally dried on the filter {druck_filter} using argon flow - Argon cylinder {Argon cylinder}. Argon is set to {flow} l/min, check that outlet valve is opened and the stream is led to the ventilation. Argon line is opened. Drying on filter is continued for min. After required time is passed, the argon line is closed.",
+        "The filter cake is additionally dried on the filter {d_filter} using argon flow - Argon cylinder {Argon cylinder}. Argon is set to {flow} l/min, check that outlet valve is opened and the stream is led to the ventilation. Argon line is opened. Drying on filter is continued for min. After required time is passed, the argon line is closed.",
     },
     {
-      Equipment: "druck_filter",
+      Equipment: "d_filter",
       OperationType: "unloading from filter",
       Content:
-        "The lid of the filter {druck_filter} is opened. Material from the filter is unloaded using shovel {shovel} <to where>.",
+        "The lid of the filter {d_filter} is opened. Material from the filter is unloaded using shovel {shovel} <to where>.",
     },
     {
-      Equipment: "nutsche_filter",
+      Equipment: "n_filter",
       OperationType: "preparation of filter",
       Content:
-        "The filter {nutsche_filter} is assembled and prepared to work. Filtration cloth is prepared and properly installed. Membrane pump {membrane_pump} is connected.",
+        "The filter {n_filter} is assembled and prepared to work. Filtration cloth is prepared and properly installed. Membrane pump {m_pump} is connected.",
     },
     {
-      Equipment: "nutsche_filter",
+      Equipment: "n_filter",
       OperationType: "vacuum setting",
-      Content: "Membrane pump {membrane_pump} is set {torr} Torr.",
+      Content: "Membrane pump {m_pump} is set {torr} Torr.",
     },
     {
-      Equipment: "nutsche_filter",
+      Equipment: "n_filter",
       OperationType: "loading on filter",
       Content:
-        "Membrane pump {membrane_pump} is started. Product is loaded on the filter {nutsche_filter} using jug. Once 2/3 of the filter is loaded, stop loading.",
+        "Membrane pump {m_pump} is started. Product is loaded on the filter {n_filter} using jug. Once 2/3 of the filter is loaded, stop loading.",
     },
     {
-      Equipment: "nutsche_filter",
+      Equipment: "n_filter",
       OperationType: "discharging ML",
       Content:
-        "Stop the pump. Connect peristaltic pump {peristaltic_pump} to the bottom valve of the filter using norprene hose {norprene hose}. Second end of the hose is securely fixed into receiving container canister, set the speed of peristaltic pump {peristaltic_pump} %. Start the pump. Continue the process until all ML is unloaded into respective receiver.",
+        "Stop the pump. Connect peristaltic pump {p_pump} to the bottom valve of the filter using norprene hose {hose}. Second end of the hose is securely fixed into receiving container canister, set the speed of peristaltic pump {p_pump} %. Start the pump. Continue the process until all ML is unloaded into respective receiver.",
     },
     {
-      Equipment: "nutsche_filter",
+      Equipment: "n_filter",
       OperationType: "washing FK",
       Content:
         "Make sure the pump is stopped. Required amount of material is weighed on the balances {balances} using jug. Solvent {material} is loaded on top of filter cake, using shovel {shovel} the filter cake is thoroughly mixed.",
     },
     {
-      Equipment: "nutsche_filter",
+      Equipment: "n_filter",
       OperationType: "drying on filter",
       Content:
-        "The filter cake is additionally dried on the filter by keeping membrane pump sucking air through it. Membrane pump {membrane_pump} is set to {torr} Torr. Drying on filter is continued for {time} min. After required time is passed, the pump is stopped.",
+        "The filter cake is additionally dried on the filter by keeping membrane pump sucking air through it. Membrane pump {m_pump} is set to {torr} Torr. Drying on filter is continued for {time} min. After required time is passed, the pump is stopped.",
     },
     {
-      Equipment: "nutsche_filter",
+      Equipment: "n_filter",
       OperationType: "unloading from filter",
       Content:
-        "The lid of the filter {nutsche_filter} is opened. Material from the filter is unloaded using shovel {shovel} <to where>.",
+        "The lid of the filter {n_filter} is opened. Material from the filter is unloaded using shovel {shovel} <to where>.",
     },
     {
-      Equipment: "membrane_pump",
+      Equipment: "m_pump",
       OperationType: "vacuum setting",
-      Content: "Membrane pump {membrane_pump} is set to {torr} Torrs.",
+      Content: "Membrane pump {m_pump} is set to {torr} Torrs.",
     },
     {
-      Equipment: "peristaltic_pump",
+      Equipment: "p_pump",
       OperationType: "speed setting",
-      Content: "Peristaltic pump {peristaltic_pump} is set to {ppumpSet} %.",
+      Content: "Peristaltic pump {p_pump} is set to {ppumpSet} %.",
     },
   ];
     
@@ -264,21 +264,6 @@ async function GetEquipmentListByTypeMOCK(equipmentType) {
       { name: "balances", code: "007-44" },
       { name: "balances", code: "007-45" },
     ],
-    m_pump: [
-      { name: "pump", code: "001-22" },
-      { name: "pump", code: "001-23" },
-      { name: "pump", code: "001-24" },
-      { name: "pump", code: "001-30" },
-    ],
-    p_pump: [
-      { name: "pump", code: "001-13" },
-      { name: "pump", code: "001-29" },
-      { name: "pump", code: "001-40" },
-    ],
-    o_pump: [
-      { name: "pump", code: "001-38" },
-      { name: "pump", code: "001-43" },
-    ],
     reactor: [
       { name: "reactor", code: "002-10" },
       { name: "reactor", code: "002-11" },
@@ -298,27 +283,31 @@ async function GetEquipmentListByTypeMOCK(equipmentType) {
       { name: "funnel", code: "funnel-2" },
       { name: "funnel", code: "funnel-3" },
     ],
-    druck_filter: [
-      { name: "druck_filter", code: "046-6" },
-      { name: "druck_filter", code: "046-7" },
+    d_filter: [
+      { name: "d_filter", code: "046-6" },
+      { name: "d_filter", code: "046-7" },
     ],
-    nutsche_filter: [
-      { name: "nutsche_filter", code: "046-1" },
-      { name: "nutsche_filter", code: "046-10" },
-      { name: "nutsche_filter", code: "046-11" },
-      { name: "nutsche_filter", code: "046-12" },
-      { name: "nutsche_filter", code: "046-4" },
-      { name: "nutsche_filter", code: "046-5" },
+    n_filter: [
+      { name: "n_filter", code: "046-1" },
+      { name: "n_filter", code: "046-10" },
+      { name: "n_filter", code: "046-11" },
+      { name: "n_filter", code: "046-12" },
+      { name: "n_filter", code: "046-4" },
+      { name: "n_filter", code: "046-5" },
     ],
-    membrane_pump: [
-      { name: "membrane_pump", code: "001-22" },
-      { name: "membrane_pump", code: "001-23" },
-      { name: "membrane_pump", code: "001-24" },
+    m_pump: [
+      { name: "m_pump", code: "001-22" },
+      { name: "m_pump", code: "001-23" },
+      { name: "m_pump", code: "001-24" },
     ],
-    peristaltic_pump: [
-      { name: "peristaltic_pump", code: "001-13" },
-      { name: "peristaltic_pump", code: "001-21" },
-      { name: "peristaltic_pump", code: "001-29" },
+    p_pump: [
+      { name: "p_pump", code: "001-13" },
+      { name: "p_pump", code: "001-21" },
+      { name: "p_pump", code: "001-29" },
+    ],    
+    o_pump: [
+      { name: "o_pump", code: "001-38" },
+      { name: "o_pump", code: "001-43" },
     ],
     oven: [
       { name: "oven", code: "012-10" },
@@ -360,14 +349,14 @@ async function GetEquipmentListMOCK() {
     { name: "funnel", code: "funnel-1" },
     { name: "funnel", code: "funnel-2" },
     { name: "funnel", code: "funnel-3" },
-    { name: "druck_filter", code: "046-6" },
-    { name: "nutsche_filter", code: "046-5" },
-    { name: "membrane_pump", code: "001-22" },
-    { name: "membrane_pump", code: "001-23" },
-    { name: "membrane_pump", code: "001-24" },
-    { name: "peristaltic_pump", code: "001-13" },
-    { name: "peristaltic_pump", code: "001-21" },
-    { name: "peristaltic_pump", code: "001-29" },
+    { name: "d_filter", code: "046-6" },
+    { name: "n_filter", code: "046-5" },
+    { name: "m_pump", code: "001-22" },
+    { name: "m_pump", code: "001-23" },
+    { name: "m_pump", code: "001-24" },
+    { name: "p_pump", code: "001-13" },
+    { name: "p_pump", code: "001-21" },
+    { name: "p_pump", code: "001-29" },
     // Add more equipment as needed
   ];
 

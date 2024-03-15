@@ -89,27 +89,52 @@ async function GetListActivityMOCK(equipmentType) {
   var activities = [
     {
       Equipment: "reactor",
+      OperationType: "preparation_of_reactor",
+      Content:
+        `The reactor {reactor} and thermostat are checked to be ready for work. Stirrer drive is installed.
+        On lid (clockwise):
+        1. Reflux condenser on ball ground joint
+        2. 60 mm flange port (with lid)
+        3. Valve (for loading liquid).
+        4. Overpressure release valve
+        5. Liquid dosage system
+        6. Thermometer
+        7. Valve with PTFE tubing for sparging of argon, closed, connected to argon cylinder with reducing valve;
+        Cold trap is connected behind the reactor.`
+
+    },
+    {
+      Equipment: "reactor",
       OperationType: "loading_of_solid",
       Content:
-        "Required amount of {material} is weighed on the balances {balances} using jug {jug}, weighted material is loaded into reactor {reactor} via 60 mm flange port using funnel {funnel}. The 60 mm flange port is closed.",
+        `Required amount of {material} is weighed on the balances {balances} using jug {jug}, weighted material is loaded into reactor {reactor} via 60 mm flange port using funnel {funnel}. The 60 mm flange port is closed.
+        Specified amount: ….. kg (….. - ….. kg)`,
     },
     {
       Equipment: "reactor",
       OperationType: "loading_of_liquid",
       Content:
-        "Required amount of {material} is weighed on the balances {balances} using jug {jug}. Using peristaltic pump  {p_pump} and norprene hose {hose}, weighted material is pumped into reactor via liquid loading valve. Peristaltic pump is set to {ppumpSet}%. After loading is done, pump is stopped, hose is removed. The 60 mm flange port is closed. Hose is cleaned.",
+        `Required amount of {material} is weighed on the balances {balances} using jug {jug}. Using peristaltic pump  {peristaltic_pump} and norprene hose {norprene hose}, weighted material is pumped into reactor via liquid loading valve. Peristaltic pump is set to {ppumpSet}%. After loading is done, pump is stopped, hose is removed. The 60 mm flange port is closed. Hose is cleaned.
+        Specified amount: ….. kg (….. - ….. kg)`,
     },
     {
       Equipment: "reactor",
       OperationType: "dosing_of_liquid",
       Content:
-        "Required amount of {material} is weighed on the balances {balances} using jug {jug}. Using peristaltic pump  {p_pump} and norprene hose {hose}, weighted material is pumped into dosing system. Peristaltic pump is set to {ppumpSet}%. After loading is done, pump is stopped, hose is removed. Dosing system is closed. Hose is cleaned.",
+        `Required amount of {material} is weighed on the balances {balances} using jug {jug}. Using peristaltic pump  {peristaltic_pump} and norprene hose {norprene hose}, weighted material is pumped into dosing system. Peristaltic pump is set to {ppumpSet}%. After loading is done, pump is stopped, hose is removed. Dosing system is closed. Hose is cleaned.
+        Specified amount: ….. kg (….. - ….. kg)`,
     },
     {
       Equipment: "reactor",
       OperationType: "creating_argon_flow",
       Content:
         "Argon line is connected to the argon port of reactor {reactor}. The Argon {material} flow is set to {flow}l/min. The valve is opened. After required time is passed, the argon flow is closed.",
+    },    
+    {
+      Equipment: "reactor",
+      OperationType: "hold_time",
+      Content:
+        "Reaction mixture is stirred during {time}-{time}h. Temperature set is {tepm}°C. Stirring is set to {rpm}rpm.",
     },
     {
       Equipment: "reactor",
@@ -125,7 +150,7 @@ async function GetListActivityMOCK(equipmentType) {
       Equipment: "reactor",
       OperationType: "heating_on",
       Content:
-        "Heating for reactor {reactor} is turned ON. Temperature is set to {temp}°C.",
+        "Heating for reactor {reactor} is turned ON. Temperature is set to {temp}°C. Target temperature is {temp}-{temp}°C. Once temperature is in given range, setting is changed to {temp}°C.",
     },
     {
       Equipment: "d_filter",
@@ -162,6 +187,12 @@ async function GetListActivityMOCK(equipmentType) {
       OperationType: "drying on filter",
       Content:
         "The filter cake is additionally dried on the filter {d_filter} using argon flow - Argon cylinder {Argon cylinder}. Argon is set to {flow} l/min, check that outlet valve is opened and the stream is led to the ventilation. Argon line is opened. Drying on filter is continued for min. After required time is passed, the argon line is closed.",
+    },
+    {
+      Equipment: "d_filter",
+      OperationType: "unloading from filter",
+      Content:
+        "The lid of the filter {d_filter} is opened. Material from the filter is unloaded using shovel {shovel} <to where>.",
     },
     {
       Equipment: "d_filter",

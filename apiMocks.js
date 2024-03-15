@@ -1,5 +1,6 @@
 // apiMocks.js
 // Define the delay function
+
 /**
  * Delays execution for a specified duration.
  * @param {number} duration - The duration to delay in milliseconds.
@@ -21,7 +22,6 @@ function delay(duration) {
  */
 async function GetAuthTokenMOCK(username, password) {
     const tokenExpirationTime = 3600 * 1000; // Token expiration time in milliseconds (e.g., 1 hour)
-    
     // Check if token exists in the session and is not expired
     const storedToken = sessionStorage.getItem('authToken');
     const storedTokenTimestamp = sessionStorage.getItem('authTokenTimestamp');
@@ -49,12 +49,11 @@ async function GetAuthTokenMOCK(username, password) {
  */
 async function GetParametersForOperationsMOCK() {
   await delay(500); // Simulating a delay of 500ms
-
   // Simulated list of parameters for operations
   const parameters = ["time", "temp", "rpm", "flow", "ppumpSet","torr"];
-
   return parameters;
 }
+
 /**
  * Simulates retrieving a list of equipment types with a delay.
  *

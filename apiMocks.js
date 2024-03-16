@@ -91,49 +91,59 @@ async function GetListActivityMOCK(equipmentType) {
       OperationType: "preparation_of_reactor",
       Content:
         `The reactor {reactor} and thermostat are checked to be ready for work. Stirrer drive is installed.
-        On lid (clockwise):
-        1. Reflux condenser on ball ground joint
-        2. 60 mm flange port (with lid)
-        3. Valve (for loading liquid).
-        4. Overpressure release valve
-        5. Liquid dosage system
-        6. Thermometer
-        7. Valve with PTFE tubing for sparging of argon, closed, connected to argon cylinder with reducing valve;
-        Cold trap is connected behind the reactor.`
-
+On lid (clockwise):
+1. Reflux condenser on ball ground joint
+2. 60 mm flange port (with lid)
+3. Valve (for loading liquid).
+4. Overpressure release valve
+5. Liquid dosage system
+6. Thermometer
+7. Valve with PTFE tubing for sparging of argon, closed, connected to argon cylinder with reducing valve;
+Cold trap is connected behind the reactor.`,
     },
     {
       Equipment: "reactor",
       OperationType: "loading_of_solid",
       Content:
-        `Required amount of {material} is weighed on the balances {balances} using jug {jug}, weighted material is loaded into reactor {reactor} via 60 mm flange port using funnel {funnel}. The 60 mm flange port is closed.
-        Specified amount: ….. kg (….. - ….. kg)`,
+        `Required amount of {material} is weighed on the balances {balances} using jug {jug}. 
+Weighted material is loaded into reactor {reactor} via 60 mm flange port using funnel {funnel}. 
+The 60 mm flange port is closed.
+Specified amount: ….. kg (….. - ….. kg)`,
     },
     {
       Equipment: "reactor",
       OperationType: "loading_of_liquid",
       Content:
-        `Required amount of {material} is weighed on the balances {balances} using jug {jug}. Using peristaltic pump  {peristaltic_pump} and norprene hose {norprene hose}, weighted material is pumped into reactor via liquid loading valve. Peristaltic pump is set to {ppumpSet}%. After loading is done, pump is stopped, hose is removed. The 60 mm flange port is closed. Hose is cleaned.
-        Specified amount: ….. kg (….. - ….. kg)`,
+        `Required amount of {material} is weighed on the balances {balances} using jug {jug}. 
+Using peristaltic pump  {peristaltic_pump} and norprene hose {norprene hose}, weighted material is pumped into reactor via liquid loading valve. 
+Peristaltic pump is set to {ppumpSet}%. 
+After loading is done, pump is stopped, hose is removed. The 60 mm flange port is closed. Hose is cleaned.
+Specified amount: ….. kg (….. - ….. kg)`,
     },
     {
       Equipment: "reactor",
       OperationType: "dosing_of_liquid",
       Content:
-        `Required amount of {material} is weighed on the balances {balances} using jug {jug}. Using peristaltic pump  {peristaltic_pump} and norprene hose {norprene hose}, weighted material is pumped into dosing system. Peristaltic pump is set to {ppumpSet}%. After loading is done, pump is stopped, hose is removed. Dosing system is closed. Hose is cleaned.
-        Specified amount: ….. kg (….. - ….. kg)`,
+        `Required amount of {material} is weighed on the balances {balances} using jug {jug}. 
+Using peristaltic pump  {peristaltic_pump} and norprene hose {norprene hose}, weighted material is pumped into dosing system. 
+Peristaltic pump is set to {ppumpSet}%. After loading is done, pump is stopped, hose is removed. 
+Dosing system is closed. Hose is cleaned.
+Specified amount: ….. kg (….. - ….. kg)`,
     },
     {
       Equipment: "reactor",
       OperationType: "creating_argon_flow",
       Content:
-        "Argon line is connected to the argon port of reactor {reactor}. The Argon {material} flow is set to {flow}l/min. The valve is opened. After required time is passed, the argon flow is closed.",
+        `Argon line is connected to the argon port of reactor {reactor}. 
+The Argon {material} flow is set to {flow}l/min. The valve is opened. 
+After required time is passed, the argon flow is closed.`,
     },    
     {
       Equipment: "reactor",
       OperationType: "hold_time",
       Content:
-        "Reaction mixture is stirred during {time}-{time}h. Temperature set is {tepm}°C. Stirring is set to {rpm}rpm.",
+        `Reaction mixture is stirred during {time}-{time}h. 
+Temperature set is {tepm}°C. Stirring is set to {rpm}rpm.`,
     },
     {
       Equipment: "reactor",
@@ -149,106 +159,131 @@ async function GetListActivityMOCK(equipmentType) {
       Equipment: "reactor",
       OperationType: "heating_on",
       Content:
-        "Heating for reactor {reactor} is turned ON. Temperature is set to {temp}°C. Target temperature is {temp}-{temp}°C. Once temperature is in given range, setting is changed to {temp}°C.",
+        `Heating for reactor {reactor} is turned ON. Temperature is set to {temp}°C. 
+Target temperature is {temp}-{temp}°C. Once temperature is in given range, setting is changed to {temp}°C.`,
     },
     {
       Equipment: "d_filter",
       OperationType: "preparation of filter",
       Content:
-        "The filter {d_filter} is assembled and prepared to work. Filtration cloth is prepared and properly installed. Argon and product lines are connected to the lid, pressure test is done.",
+        `The filter {d_filter} is assembled and prepared to work. 
+Filtration cloth is prepared and properly installed. 
+Argon and product lines are connected to the lid, pressure test is done.`,
     },
     {
       Equipment: "d_filter",
       OperationType: "loading on filter",
       Content:
-        "Product is loaded on the filter {d_filter} via product line. Argon line is closed during loading. Once 2/3 of the filter is loaded, stop pumping and close product line.",
+        `Product is loaded on the filter {d_filter} via product line. Argon line is closed during loading. 
+Once 2/3 of the filter is loaded, stop pumping and close product line.`,
     },
     {
-      Equipment: "d_filter",
-      OperationType: "filtration with argon pressure",
+      Equipment: `d_filter`,
+      OperationType: `filtration with argon pressure`,
       Content:
-        "Check that product line is closed, check the pressure on Argon cylinder {Argon cylinder}, it must be in range 1-2bar. Open argon line on the lid of the filter {d_filter} and wait until no more or very little of ML is coming into the receiver (visually on level tube). At the end of operation close the argon line.",
+        `Check that product line is closed, check the pressure on Argon cylinder {Argon cylinder}, it must be in range 1-2bar. 
+Open argon line on the lid of the filter {d_filter} and wait until no more or very little of ML is coming into the receiver (visually on level tube). 
+At the end of operation close the argon line.`,
     },
     {
-      Equipment: "d_filter",
-      OperationType: "discharging ML",
+      Equipment: `d_filter`,
+      OperationType: `discharging ML`,
       Content:
-        "Check that product line and argon line are closed. Release top valve on the receiver to make sure there is no extra pressure. Connect peristaltic pump {p_pump} to the bottom valve of the filter {d_filter} using norprene hose {hose}. Second end of the hose is securely fixed into receiving container canister, set the speed of peristaltic pump {p_pump} %. Start the pump. Continue the process until all ML is unloaded into respective receiver.",
+        `Check that product line and argon line are closed. 
+Release top valve on the receiver to make sure there is no extra pressure. 
+Connect peristaltic pump {p_pump} to the bottom valve of the filter {d_filter} using norprene hose {hose}. 
+Second end of the hose is securely fixed into receiving container canister, set the speed of peristaltic pump {p_pump} %. 
+Start the pump. Continue the process until all ML is unloaded into respective receiver.`,
     },
     {
-      Equipment: "d_filter",
-      OperationType: "washing FK",
+      Equipment: `d_filter`,
+      OperationType: `washing FK`,
       Content:
-        "The lid of filter {d_filter} is opened. Required amount of material is weighed on the balances {balances} using jug. Solvent is loaded on top of filter caje, using shovel {shovel} the filter cake is thoroughly mixed. The lid is closed.",
+        `The lid of filter {d_filter} is opened. 
+Required amount of material is weighed on the balances {balances} using jug. 
+Solvent is loaded on top of filter caje, using shovel {shovel} the filter cake is thoroughly mixed. The lid is closed.`,
     },
     {
-      Equipment: "d_filter",
-      OperationType: "drying on filter",
+      Equipment: `d_filter`,
+      OperationType: `drying on filter`,
       Content:
-        "The filter cake is additionally dried on the filter {d_filter} using argon flow - Argon cylinder {Argon cylinder}. Argon is set to {flow} l/min, check that outlet valve is opened and the stream is led to the ventilation. Argon line is opened. Drying on filter is continued for min. After required time is passed, the argon line is closed.",
+        `The filter cake is additionally dried on the filter {d_filter} using argon flow - Argon cylinder {Argon cylinder}. 
+Argon is set to {flow} l/min, check that outlet valve is opened and the stream is led to the ventilation. Argon line is opened. 
+Drying on filter is continued for min. After required time is passed, the argon line is closed.`,
     },
     {
-      Equipment: "d_filter",
-      OperationType: "unloading from filter",
+      Equipment: `d_filter`,
+      OperationType: `unloading from filter`,
       Content:
-        "The lid of the filter {d_filter} is opened. Material from the filter is unloaded using shovel {shovel} <to where>.",
+        `The lid of the filter {d_filter} is opened. Material from the filter is unloaded using shovel {shovel} <to where>.`,
     },
     {
-      Equipment: "d_filter",
-      OperationType: "unloading from filter",
+      Equipment: `d_filter`,
+      OperationType: `unloading from filter`,
       Content:
-        "The lid of the filter {d_filter} is opened. Material from the filter is unloaded using shovel {shovel} <to where>.",
+        `The lid of the filter {d_filter} is opened. Material from the filter is unloaded using shovel {shovel} <to where>.`,
     },
     {
-      Equipment: "n_filter",
-      OperationType: "preparation of filter",
+      Equipment: `n_filter`,
+      OperationType: `preparation of filter`,
       Content:
-        "The filter {n_filter} is assembled and prepared to work. Filtration cloth is prepared and properly installed. Membrane pump {m_pump} is connected.",
+        `The filter {n_filter} is assembled and prepared to work. 
+Filtration cloth is prepared and properly installed. 
+Membrane pump {m_pump} is connected.`,
     },
     {
-      Equipment: "n_filter",
-      OperationType: "vacuum setting",
-      Content: "Membrane pump {m_pump} is set {torr} Torr.",
+      Equipment: `n_filter`,
+      OperationType: `vacuum setting`,
+      Content: `Membrane pump {m_pump} is set {torr} Torr.`,
     },
     {
-      Equipment: "n_filter",
-      OperationType: "loading on filter",
+      Equipment: `n_filter`,
+      OperationType: `loading on filter`,
       Content:
-        "Membrane pump {m_pump} is started. Product is loaded on the filter {n_filter} using jug. Once 2/3 of the filter is loaded, stop loading.",
+        `Membrane pump {m_pump} is started. 
+Product is loaded on the filter {n_filter} using jug. 
+Once 2/3 of the filter is loaded, stop loading.`,
     },
     {
-      Equipment: "n_filter",
-      OperationType: "discharging ML",
+      Equipment: `n_filter`,
+      OperationType: `discharging ML`,
       Content:
-        "Stop the pump. Connect peristaltic pump {p_pump} to the bottom valve of the filter using norprene hose {hose}. Second end of the hose is securely fixed into receiving container canister, set the speed of peristaltic pump {p_pump} %. Start the pump. Continue the process until all ML is unloaded into respective receiver.",
+        `Stop the pump. Connect peristaltic pump {p_pump} to the bottom valve of the filter using norprene hose {hose}. 
+Second end of the hose is securely fixed into receiving container canister, set the speed of peristaltic pump {p_pump} %. 
+Start the pump. 
+Continue the process until all ML is unloaded into respective receiver.`,
     },
     {
-      Equipment: "n_filter",
-      OperationType: "washing FK",
+      Equipment: `n_filter`,
+      OperationType: `washing FK`,
       Content:
-        "Make sure the pump is stopped. Required amount of material is weighed on the balances {balances} using jug. Solvent {material} is loaded on top of filter cake, using shovel {shovel} the filter cake is thoroughly mixed.",
+        `Make sure the pump is stopped. Required amount of material is weighed on the balances {balances} using jug. 
+Solvent {material} is loaded on top of filter cake, using shovel {shovel} the filter cake is thoroughly mixed.`,
     },
     {
-      Equipment: "n_filter",
-      OperationType: "drying on filter",
+      Equipment: `n_filter`,
+      OperationType: `drying on filter`,
       Content:
-        "The filter cake is additionally dried on the filter by keeping membrane pump sucking air through it. Membrane pump {m_pump} is set to {torr} Torr. Drying on filter is continued for {time} min. After required time is passed, the pump is stopped.",
+        `The filter cake is additionally dried on the filter by keeping membrane pump sucking air through it. 
+Membrane pump {m_pump} is set to {torr} Torr. Drying on filter is continued for {time} min. 
+After required time is passed, the pump is stopped.`,
     },
     {
-      Equipment: "n_filter",
-      OperationType: "unloading from filter",
+      Equipment: `n_filter`,
+      OperationType: `unloading from filter`,
       Content:
-        "The lid of the filter {n_filter} is opened. Material from the filter is unloaded using shovel {shovel} <to where>.",
+        `The lid of the filter {n_filter} is opened. 
+Material from the filter is unloaded using shovel {shovel} <to where>.`,
     },
     {
-      Equipment: "m_pump",
-      OperationType: "vacuum setting",
-      Content: "Membrane pump {m_pump} is set to {torr} Torrs.",
+      Equipment: `m_pump`,
+      OperationType: `vacuum setting`,
+      Content: `Membrane pump {m_pump} is set to {torr} Torrs.`,
     },
     {
-      Equipment: "p_pump",
-      OperationType: "speed setting",
-      Content: "Peristaltic pump {p_pump} is set to {ppumpSet} %.",
+      Equipment: `p_pump`,
+      OperationType: `speed setting`,
+      Content: `Peristaltic pump {p_pump} is set to {ppumpSet} %.`,
     },
   ];
     

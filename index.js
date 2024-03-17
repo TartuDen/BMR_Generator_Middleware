@@ -7,6 +7,7 @@ import { GetListEquipmentTypesMOCK, GetListActivityMOCK, GetEquipmentListByTypeM
 
 const port = 8081;
 const app = express();
+let operations = [];
 
 app.use(express.static("public"));
 app.use(cors());
@@ -34,6 +35,20 @@ app.post('/login', async (req, res) => {
     }
 });
 
+
+app.post("/addOp",async (req,res)=>{
+  const { newOp} = req.body;
+  operations.push(newOp);
+  console.log("operations");
+  console.log(operations);
+  res.status(201)
+})
+
+app.get("/operations",async(req,res)=>{
+  console.log("******** operations *************");
+  console.log(operations);
+  res.status(200).json(operations);
+})
 
 app.get("/equipment_list", async (req,res)=>{
   // let equipmentType = req.body

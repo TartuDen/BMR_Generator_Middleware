@@ -115,7 +115,7 @@ Specified amount: ….. kg (….. - ….. kg)`,
       OperationType: "loading_of_liquid",
       Content:
         `Required amount of {material} is weighed on the balances {balances} using jug {jug}. 
-Using peristaltic pump  {peristaltic_pump} and norprene hose {norprene hose}, weighted material is pumped into reactor via liquid loading valve. 
+Using peristaltic pump  {p_pump} and norprene hose {hose}, weighted material is pumped into reactor via liquid loading valve. 
 Peristaltic pump is set to {ppumpSet}%. 
 After loading is done, pump is stopped, hose is removed. The 60 mm flange port is closed. Hose is cleaned.
 Specified amount: ….. kg (….. - ….. kg)`,
@@ -125,7 +125,7 @@ Specified amount: ….. kg (….. - ….. kg)`,
       OperationType: "dosing_of_liquid",
       Content:
         `Required amount of {material} is weighed on the balances {balances} using jug {jug}. 
-Using peristaltic pump  {peristaltic_pump} and norprene hose {norprene hose}, weighted material is pumped into dosing system. 
+Using peristaltic pump  {p_pump} and norprene hose {hose}, weighted material is pumped into dosing system. 
 Peristaltic pump is set to {ppumpSet}%. After loading is done, pump is stopped, hose is removed. 
 Dosing system is closed. Hose is cleaned.
 Specified amount: ….. kg (….. - ….. kg)`,

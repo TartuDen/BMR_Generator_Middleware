@@ -179,14 +179,17 @@ setting: .... l/min`
 Temperature set is {tepm}°C. Stirring is set to {rpm}rpm.`,
 Other:
 `Actual temp
-setting: ..... °C`
+setting: ..... °C
+Actual stirring
+setting: .... rpm`
     },
     {
       Equipment: "reactor",
       OperationType: "stirring_on",
       Content: "Stirring in reactor {reactor} is turned ON. Set to {rpm} rpm.",
       Other:
-      ``
+`Actual stirring
+setting: .... rpm`
     },
     {
       Equipment: "reactor",

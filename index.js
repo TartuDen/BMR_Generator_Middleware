@@ -39,12 +39,10 @@ app.post('/login', async (req, res) => {
 app.post("/addOp",async (req,res)=>{
   operations.push(req.body);
 
-  res.status(201)
+  res.status(201).json({message: "post is successful"})
 })
 
 app.get("/operations",async(req,res)=>{
-  console.log(operations);
-
   res.status(200).json(operations);
 })
 

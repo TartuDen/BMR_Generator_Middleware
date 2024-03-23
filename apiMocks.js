@@ -503,44 +503,6 @@ async function GetEquipmentListByTypeMOCK(equipmentType) {
   return equipmentMap[equipmentType] || [];
 }
 
-/**
- * Simulates retrieving a list of all equipment with a delay.
- * @returns {Promise<Array>} A promise that resolves with the simulated list of all equipment.
- */
-async function GetEquipmentListMOCK() {
-  await delay(500); // Simulating a delay of 500ms
-
-  // Simulated list of all equipment
-  const equipmentList = [
-    { name: "balances", code: "007-10" },
-    { name: "balances", code: "007-11" },
-    { name: "balances", code: "007-12" },
-    { name: "pump", code: "001-10" },
-    { name: "pump", code: "001-11" },
-    { name: "pump", code: "001-12" },
-    { name: "reactor", code: "002-10" },
-    { name: "reactor", code: "002-11" },
-    { name: "reactor", code: "002-12" },
-    { name: "reactor", code: "002-13" },
-    { name: "jug", code: "tile" },
-    { name: "jug", code: "waste" },
-    { name: "funnel", code: "funnel-1" },
-    { name: "funnel", code: "funnel-2" },
-    { name: "funnel", code: "funnel-3" },
-    { name: "d_filter", code: "046-6" },
-    { name: "n_filter", code: "046-5" },
-    { name: "m_pump", code: "001-22" },
-    { name: "m_pump", code: "001-23" },
-    { name: "m_pump", code: "001-24" },
-    { name: "p_pump", code: "001-13" },
-    { name: "p_pump", code: "001-21" },
-    { name: "p_pump", code: "001-29" },
-    // Add more equipment as needed
-  ];
-
-  return equipmentList;
-}
-
 
 // Export all functions together
 export {
@@ -548,6 +510,5 @@ export {
   GetParametersForOperationsMOCK,
   GetListEquipmentTypesMOCK,
   GetListActivityMOCK,
-  GetEquipmentListByTypeMOCK,
-  GetEquipmentListMOCK
+  GetEquipmentListByTypeMOCK
 };

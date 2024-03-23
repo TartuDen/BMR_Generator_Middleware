@@ -407,6 +407,31 @@ Pump is turned ON`,
           Other:
       ``
     },
+    {
+      Equipment: `oven`,
+      OperationType: `material_load_on_trays`,
+      Content: `Using shovel "{shovel}" product is loaded on trays.
+Each tray is weighed on balances {balances}, data is recorded into Table <number>.
+Tray is placed into drying oven.
+After all product is loaded on trays and placed into oven, the oven is clodes.
+Heating is set {temp}.
+Timer is set to {time}.
+The dryining starts.`,
+          Other:
+      ``
+    },
+    {
+      Equipment: `oven`,
+      OperationType: `material_unload_from_trays`,
+      Content: `Oven is truned OFF.
+Oven is opened.
+Each tray is taken from the oven and weighed on the balances {balances}.
+Mass is recorded into BR table <number>.
+Using shovel "{shovel}" product is unloaded from each tray into PE bag.
+`,
+          Other:``
+    },
+    
   ];
     
 
